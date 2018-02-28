@@ -1,0 +1,38 @@
+{{ define "content" }}
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content text-center p-md qrcode-bg" style="height: 300px">
+                    <img id="qrcode_img" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content text-center p-md" style="height: 300px">
+                    <form id="contentForm">
+                        <div class="form-group">
+                            <textarea class="form-control" name="content" style="height: 220px" placeholder="请输入文字内容"></textarea>
+                        </div>
+                        
+                    </form>
+                    <button id="confirm" class="btn btn-md btn-primary m-t-n-xs" ><strong>生成二维码</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}
+
+{{ define "plugin_styles" }}
+    <script src="/static/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/static/js/ogl/qrcode.generator.js"></script>
+{{ end }}
+
+{{ define "inline_styles" }}
+    <style type="text/css">
+        .qrcode-bg {
+            background: rgba(0,0,0,0.03);
+            border: 2px dashed #1ab394;
+        }
+    </style>
+{{ end }}

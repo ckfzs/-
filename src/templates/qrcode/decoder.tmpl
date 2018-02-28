@@ -1,0 +1,40 @@
+{{ define "content" }}
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                    <h3 class="m-t-none m-b">上传图片</h3>
+                    <form id="qrcode-dropzone" class="dropzone">
+                        <div class="dropzone-previews"></div>
+                        <button type="submit" class="btn btn-primary pull-right">解码</button>
+                        <button type="reset" class="btn btn-primary pull-right">重置</button>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <h3 class="m-t-none m-b">解码结果</h3>
+                    <textarea class="form-control" id="content" style="height: 220px" placeholder="" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}
+
+{{ define "plugin_styles" }}
+    <script src="/static/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/static/js/plugins/dropzone/dropzone.js"></script>
+    <script src="/static/js/ogl/qrcode.decoder.js"></script>
+{{ end }}
+
+{{ define "inline_styles" }}
+    <link href="/static/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <style type="text/css">
+        .dropzone {
+            border: 2px dashed #1ab394;
+            min-height: 220px;
+        }
+        .dropzone .dz-default.dz-message {
+            background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='120px'><text x='0' y='15' fill='red' font-size='20'>点击选择图片</text></svg>");
+        }
+    </style>
+{{ end }}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>在线小工具库 | {{ .title }}</title>
+    <link type="favicon" rel="shortcut icon" href="/static/favicon.ico" />
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="/static/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    {{ template "inline_styles" . }}
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+                                <img alt="image" class="img-circle" src="/static/img/profile_small.jpg" />
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">游客</strong>
+                                    </span>
+                                    <span class="text-muted text-xs block">
+                                        匿名用户 <b class="caret"></b>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="contacts.html">Contacts</a></li>
+                                <li><a href="mailbox.html">Mailbox</a></li>
+                                <li class="divider"></li>
+                                <li><a href="login.html">Login</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            OGL
+                        </div>
+                    </li>
+                    <li id="qrcode">
+                        <a href="#"><i class="fa fa-qrcode"></i> 
+                            <span class="nav-label">二维码</span> <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li id="generator"><a href="/qrcode/generator">二维码生成器</a></li>
+                            <li id="decoder"><a href="/qrcode/decoder">二维码解码器</a></li>
+                            <li id="api-doc"><a href="/qrcode/api-doc">API文档</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" action="#">
+                            <div class="form-group">
+                                <input type="text" placeholder="搜索功能尚未开放..." class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">欢迎光临, 游客</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-sign-out"></i> Login
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                {{ template "content" . }}
+            </div>
+            <div class="footer">
+                <div class="pull-right">
+                    在线小工具库
+                </div>
+                <div>
+                    <strong>Copyright</strong> www.ckfzs.com 2017-2018
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Mainly scripts -->
+<script src="/static/js/jquery-2.1.1.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/static/js/plugins/toastr/toastr.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="/static/js/inspinia.js"></script>
+<script src="/static/js/plugins/pace/pace.min.js"></script>
+<script src="/static/js/ogl/ogl.js"></script>
+{{ template "plugin_styles" . }}
+</html>

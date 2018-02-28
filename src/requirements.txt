@@ -1,0 +1,5 @@
+github.com/gin-gonic/gin
+github.com/skip2/go-qrcode
+github.com/tuotoo/qrcode
+golang.org/x/net
+golang.org/x/sync
